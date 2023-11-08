@@ -1,0 +1,116 @@
+# > 卡片日记vip
+^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body kprj.js
+# > 番茄小说去章末广告
+^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/(get_ads|stats|settings)\/ url reject
+^https?:\/\/.+\.pglstatp-toutiao\.com\/.+\/toutiao\.mp4  url reject
+^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/(ad-app-package|ad)\/.+ url reject
+^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/web\.business\.image\/.+  url reject
+^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/obj\/ad-pattern\/renderer url reject
+^https?:\/\/gurd\.snssdk\.com\/src\/server\/v3\/package url reject
+^https?:\/\/.+\.byteimg.com/tos-cn-i-1yzifmftcy\/(.+)-jpeg\.jpeg  url reject
+^https?:\/\/.+\.pstatp\.com\/obj\/mosaic-legacy\/.+\?from\=ad  url reject
+^https?:\/\/.+\.pstatp\.com\/bytecom\/resource\/track_log\/src\/.+  url reject
+^https?:\/\/.+\.snssdk\.com\/video\/play\/1\/toutiao\/.+\/mp4 url reject
+^https?:\/\/.+\.snssdk.com\/api\/ad\/.+ url reject
+^http:\/\/.+\.byteimg\.com\/ad-app-package url reject
+^http:\/\/.+\.byteimg\.com\/web\.business\.image url reject
+# .+web\.business\.image url reject
+^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(ad-app-package|ad)\/.+ url reject
+^https?:\/\/adim\.pinduoduo\.com\/.+\/toutiao\?.+ url reject
+^https?:\/\/.+novelapp\.fqnovelvod\.com\/.+\/video\/.+ url reject
+# ^http:\/\/.+\.douyincdn\.com\/stage\/.+\.flv url reject
+^https?:\/\/finder(.*?)\.video\.qq\.com url reject
+^https?:\/\/app\.zhtdtech\.com\/zhtadvertmanager url reject
+^https?:\/\/wap\.xuanshu\.org\/book\/ url script-response-body novel.js
+# > 重写规则（本地)
+# > 小说网站禁止调用js屏蔽广告
+# > 通用型小说网站去广告测试
+^https?:\/\/wap\.xuanshu\.org\/book\/(\d+)\/(\d+).html - response-body (<script src=(.+)>|<b>(.+)</b>) response-body <p>
+^https?:\/\/wap\.xuanshu\.org\/book\/30106\/ - response-body (<script src=(.+)>|<b>(.+)</b>) response-body <p>
+^https?:\/\/(.*?)\.douyin(.*?)\.com url reject
+^https?:\/\/.*?.bozhou666.com/ylnew/.*?.js url reject
+# > boxjs
+^https?:\/\/(.+\.)?boxjs\.(com|net) url script-analyze-echo-response https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
+# > 内容农场(www.bing.com)  
+https?:\/\/(www\.bing)(\.\w{2,4}){1,2}\/(search\?.*|\?sa=|\?FORM)(?!.*?(apps=)) url script-response-body https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo.js
+# > 内容农场(www.google.com|com.hk)  
+https?:\/\/(www\.google)(\.\w{2,4}){1,2}\/(search\?|\?sa=|\?FORM)(?!.*?(apps=)) url script-response-body https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_contentFarm.js
+^https?:\/\/s3\.zdmimg\.com\/collec url reject
+^https?:\/\/article-api\.smzdm\.com\/publish\/get_bubble url reject
+^https?:\/\/*\.ruqimobility\.com\/* url reject
+# > Safari 上使用 Google 搜索
+^https?://(www\.)?g\.cn url 302 https://www.google.com
+^https?://(www\.)?google\.cn url 302 https://www.google.com
+^https?://(www\.)?google\.cn/search url 302 https://www.google.com/search
+# > 网站去广告
+^https?:\/\/static-l3\.xvideos-cdn\.com\/v3\/img\/skins\/common\/.*?.mp4 url reject-img
+^https?:\/\/static-l3\.xvideos-cdn\.com\/v3\/img\/skins\/common\/blank.mp4 url reject-img
+^https?:\/\/web\.cdn\.openinstall\.io\/openinstall.js url reject
+^https?:\/\/cube-hk-\d+\.cos\.ap-hongkong\.myqcloud\.com\/res\/pic\/img\/.*?.jpg url reject
+alibaba-cn-pvg-(\d+).oss-cn-shanghai.aliyuncs.com url reject
+# > 微信相关去广告
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/getbizbanner url reject-img
+^https?:\/\/servicewechat\.com\/wxf[a-z0-9]*\/\d+\/page-frame.html url reject-200
+# > 屏蔽微信小程序乘车通广告
+^https?:\/\/cdn\.jcelyj\.com\/assets\/TP1ayxkccj\/.*? url reject
+ads\.privacy\.qq\.com\/ads url reject
+(wxsnsdythumb|wxsnsdy).wxs.qq.com url reject
+^https?:\/\/(wxsnsdy|wxsnsdythumb)\.wxs\.qq\.com\/(.*?)\/(.*?)\/(snssvpdownload|snscosdownload)\/(SH|SZ)\/reserved\/.+ url reject-img
+^https?:\/\/d\.alicdn\.com\/alilog\/mlog\/aplus\/.*? url reject
+^https?:\/\/.*?\.zhtdtech\.com\/zhtmarketing\/marketing\/news\/queryNewsList\/V1 url reject
+^https?:\/\/wxa\.wxs\.qq\.com\/images\/wxapp\/adfeedback.png url reject-img
+^https?:\/\/.*?\.zhtdtech\.com\/zhtmarketing\/marketing\/coupon\/queryCouponCountByActivityid\/V1 url reject
+^https?:\/\/.*?\.zhtdtech\.com\/zhtmarketing\/marketing\/news\/queryNewsList\/V1 - reject-dict
+^https?:\/\/.*?\.zhtdtech\.com\/gongjiao\/isAdBlock url reject-200
+^https?:\/\/.*?\.zhtdtech\.com\/zhtpufa\/sanlei\/getWeather url reject
+^https?:\/\/liudiaopingtai\.oss-cn-shenzhen\.aliyuncs\.com\/xinma\/images\/* url reject-img
+zh-bucket\.oss-cn-shenzhen\.aliyuncs\.com url reject-img
+^https?:\/\/app\d+\.zhtdtech\.com\/(card|appops)\/appopsPageNews\/(queryType|queryNews)\/V1 url reject
+^https?:\/\/app\d+\.zhtdtech\.com\/image\/new\/.*?.png url reject
+# > BiliBili首页信息流处理
+^https?:\/\/app\.bilibili\.com\/x\/v\d\/feed\/index\? url script-request-header https://gist.githubusercontent.com/ddgksf2013/a04e64065d08f5871ccf1e79c06a8c04/raw/bilibili.feed.enhance.js
+# > BiliBili_哔哩哔哩_屏蔽IP请求@ddgksf2013
+^https?:\/\/app\.bilibili\.com\/x\/resource\/ip url reject
+# > BiliBili_哔哩哔哩_屏蔽DefaultWord@ddgksf2013
+^https?:\/\/app\.bilibili\.com\/bilibili\.app\.interface\.v1\.Search\/Default url reject
+# > BiliBili_哔哩哔哩_屏蔽首页右上活动[卸载重装]@ddgksf2013
+^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity url reject-dict
+^https://app.bilibili.com/x/v2/splash/show url reject-dict
+^https://app.bilibili.com/x/v2/search/defaultwords url reject-dict
+^https?:\/\/api\.bilibili\.com\/x\/vip\/ads\/material\/report url reject-dict
+^https://api.bilibili.com/pgc/season/player/cards url reject-dict
+^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words url reject
+^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr url reject-dict
+^https?:\/\/api\.bilibili\.com\/pgc\/season\/app\/related\/recommend\? url reject-dict
+^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash) url reject-dict
+# > 什么值得买去广告==
+^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul url reject
+^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul url reject
+^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul url reject
+http:\/\/push\.zhanzhang\.baidu\.com\/push\.js url reject
+https:\/\/zz\.bdstatic\.com\/linksubmit\/push\.js url reject
+^https:\/\/hm\.baidu\.com\/.*?.js url reject
+api\-access\.pangolin\-sdk\-toutiao\.com url reject
+# > 什么值得买去广告
+# > 好价详情页去广告
+^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul url reject
+# > 好价详情页红包小助手
+^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul url reject
+# > Wiki(618晒物活动推广，将来可能不是广告)
+^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul url reject
+# > 开屏去广告
+^https?:\/\/app-api\.smzdm\.com\/util\/loading url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+# > 首页去广告
+^https?:\/\/homepage-api\.smzdm\.com\/v3\/home url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+# > 好价去广告
+^https?:\/\/haojia-api\.smzdm\.com\/home\/list url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+# > 好价详情页去广告
+^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+# > 百科去广告
+^https?:\/\/baike-api\.smzdm\.com\/home_v3\/list url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+# > 搜索结果去广告
+^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10 url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+# > 搜索标签去广告
+^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+# > 值会员权益中心banner广告
+^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
