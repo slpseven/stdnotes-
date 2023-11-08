@@ -1,0 +1,76 @@
+# > app
+# > fanqie
+host, dig.bdurl.net,REJECT
+host, webcast5-open-lf.douyin.com, reject
+host-suffix, zijieapi.com, reject
+host, dig.zjurl.cn, reject
+host, dig.bdurl.net, reject
+host-suffix, douyin.com, reject
+-host-keyword, douyin, reject
+-host, douyin.*?.com, reject
+
+# > midea
+host, smartmidea.net, reject
+
+# > tencent
+host, wxa.wxs.qq.com, reject
+host, wxsnsdy.wxs.qq.com, reject
+host, wxsnsdythumb.wxs.qq.com, reject
+host-suffix, soup.v.qq.com, reject
+host, aegis.qq.com, reject
+
+# > web ad
+host, static-cdn77.xvideos-cdn.com, reject
+host, s.orbsrv.com, reject
+host, orbsrv.com, reject
+host, opoxv.com, reject
+host, entjgcr.com, reject
+host, backpacks.oss-cn-shanghai.aliyuncs.com, reject
+host, ruqimobility.com, reject
+host, ocsp.pki.goog, reject
+host, ads.privacy.qq.com, reject
+host, ocsp.trust-provider.cn, reject
+host, i.snssdk.com,REJECT
+host, i-lq.snssdk.com,REJECT
+host, reading.snssdk.com, reject
+host-suffix, snssdk.com, reject
+host-suffix, tongdun.net, reject
+host-suffix, couponto.cn, reject
+host-suffix, changyoyo.com, reject
+host, umini.shujupie.com, reject
+host, cdn.jcelyj.com, reject
+host-suffix, jinkens.fun, reject
+host-suffix, jiaohezhen.com, reject
+host-suffix, beqokg.xyz, reject
+host-suffix, bytegoofy.com, reject
+host, statuse.digitalcertvalidation.com, reject
+host, r3.o.lencr.org, reject
+host, ocsp.usertrust.com, reject
+host, ocsp.sectigo.com, reject
+host-suffix, bytegoofy.com, reject
+host, zhanzhang.toutiao.com, reject
+host-suffix, aucdn.net, reject
+host-suffix, ctyunapi.cn, reject
+host-suffix, digicert.com, reject
+host-suffix, getclicky.com, reject
+host, adservice.google.com, reject
+host-suffix, gstatic.cn, reject
+host-suffix, amazonaws.com, reject
+host-suffix, doubleclick.net, reject
+host-keyword, googleads, reject
+host, google-analytics.com, reject
+host, pagead2.googlesyndication.com, reject
+host-suffix, getclicky.com, reject
+host-suffix, googleadservices.com, reject
+host, tpc.googlesyndication.com, reject
+-host-suffix, xvideos-cdn.com, direct
+host-suffix, zh-bucket.oss-cn-shenzhen.aliyuncs.com, reject
+host-suffix, liudiaopingtai.oss-cn-shenzhen.aliyuncs.com, reject
+host, graph.facebook.com, reject
+host-suffix, s1.pstatp.com, reject
+host-suffix, yximgs, reject
+host-suffix, toutiao, reject
+host-keyword, sf3-fe-tos, reject
+host-keyword, trafficfactory, reject
+host-keyword, exeter, reject
+host-keyword, trafficfactory, reject
